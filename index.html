@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b1b">
+  <title>NULL TIDE — The City That Remembers Tomorrow</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="boot" class="screen">
+    <div class="boot-card">
+      <div class="eyebrow">AN EXPERIMENT IN BROKEN TIME</div>
+      <h1>NULL <span>TIDE</span></h1>
+      <p class="subtitle">THE CITY THAT REMEMBERS TOMORROW</p>
+      <p class="intro">
+        Seven cores are missing. Two realities overlap.
+        Something in the city has noticed you.
+      </p>
+      <button id="start-button">ENTER THE CITY</button>
+      <div class="boot-foot">
+        BEST EXPERIENCED WITH HEADPHONES · DESKTOP BROWSER
+      </div>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="top-left panel">
+      <div class="small-label">WANDERER INTEGRITY</div>
+      <div class="meter">
+        <div id="health-fill" class="fill health"></div>
+      </div>
+
+      <div class="small-label energy-label">
+        CHRONO ENERGY <span id="energy-number">100</span>
+      </div>
+      <div class="meter">
+        <div id="energy-fill" class="fill energy"></div>
+      </div>
+
+      <div class="stats">
+        <span>CORES</span>
+        <strong id="core-count">0 / 7</strong>
+      </div>
+
+      <div class="stats">
+        <span>SENTINELS</span>
+        <strong id="enemy-count">0</strong>
+      </div>
+    </div>
+
+    <div class="top-right panel">
+      <div class="small-label">CURRENT REALITY</div>
+      <div id="dimension-name" class="dimension">MATERIAL</div>
+      <div class="small-label objective-label">ACTIVE DIRECTIVE</div>
+      <div id="objective">Locate the seven Chrono Cores.</div>
+    </div>
+
+    <div id="crosshair"><i></i><b></b></div>
+    <div id="toast"></div>
+    <div id="center-message" class="hidden"></div>
+
+    <div class="bottom-left">
+      <div id="ability-state">
+        Q SHIFT REALITY · F SLOW TIME · E PULSE
+      </div>
+      <div class="controls">
+        WASD MOVE · SPACE JUMP · SHIFT DASH · ESC PAUSE
+      </div>
+    </div>
+
+    <div id="minimap-wrap">
+      <canvas id="minimap" width="150" height="150"></canvas>
+    </div>
+  </div>
+
+  <div id="pause" class="screen hidden">
+    <div class="modal">
+      <div class="eyebrow">TEMPORAL INTERRUPTION</div>
+      <h2>PAUSED</h2>
+      <p>The city is waiting.</p>
+      <button id="resume-button">RETURN TO THE CITY</button>
+      <div class="controls">
+        WASD MOVE · MOUSE LOOK · Q SHIFT · F SLOW TIME · E PULSE
+      </div>
+    </div>
+  </div>
+
+  <div id="ending" class="screen hidden">
+    <div class="modal">
+      <div class="eyebrow">TIMELINE STATUS: STABLE</div>
+      <h2 id="ending-title">THE CITY REMEMBERS</h2>
+      <p id="ending-copy">You have reached the end of this fragment.</p>
+      <button id="restart-button">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <div id="damage-flash"></div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
